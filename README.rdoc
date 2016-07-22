@@ -1,0 +1,31 @@
+== README
+
+To do, or not to do...either way, it will be gone after 7 days.
+
+Blocitoff is an application that allows users to create to-do lists, and helps maintain their lists
+by automatically deleting to-do items that have not been completed after seven days.
+
+
+
+Made with my mentor at [Bloc](http://bloc.io).
+
+Things you may want to cover:
+
+* Ruby version
+ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+Created by a Bloc student for a Rails Web Development project.
