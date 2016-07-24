@@ -14,9 +14,38 @@
       <li><%= link_to "About", welcome_about_path %></li>
       
       <div class="pull-right user-info">
-       <%= link_to "Sign Up", new_user_path %>
+       <% if current_user %>
+         Signed in as: <strong><%= current_user.username %></strong> |
+         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+         <%= link_to "Sign In", new_user_session_path %> |
+         <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
       </div>
+      
+      
     </ul>
+    
+    
+    
+    <div class="flash">
+       <% if flash[:notice] %>
+         <div class="alert alert-success">
+           <button type="button" class="close" data-dismiss="alert">&times;</button>
+           <%= flash[:notice] %>
+         </div>
+       <% elsif flash.now[:alert] %>
+         <div class="alert alert-danger">
+           <button type="button" class="close" data-dismiss="alert">&times;</button>
+           <%= flash.now[:alert] %>
+         </div>
+       <% elsif flash[:alert] %>
+         <div class="alert alert-warning">
+           <button type="button" class="close" data-dismiss="alert">&times;</button>
+           <%= flash[:alert] %>
+         </div>
+       <% end %>
+     </div>
    
     <%= yield %>
   </div>
