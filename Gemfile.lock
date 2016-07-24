@@ -39,11 +39,9 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.7)
       execjs
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap (4.0.0.alpha3)
-      autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -149,7 +147,7 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     sass (3.4.22)
-    sass-rails (5.0.5)
+    sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
@@ -191,7 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap
+  bcrypt
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
@@ -204,7 +202,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   rails_12factor
   rspec-rails
-  sass-rails (~> 5.0)
+  sass-rails (~> 5.0.6)
   shoulda
   spring
   sqlite3
