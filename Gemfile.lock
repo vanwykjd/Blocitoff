@@ -207,7 +207,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
-  figaro
+  figaro (= 1.0)
   jquery-rails
   pg
   pry
