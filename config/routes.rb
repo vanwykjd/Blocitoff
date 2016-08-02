@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   
+<<<<<<< HEAD
   resources :users, only: [:show] do 
     resources :items, only: [:create, :destroy]
   end
@@ -15,6 +16,18 @@ Rails.application.routes.draw do
   get 'welcome/about'
   
   root 'welcome#index'
+=======
+  resources :users, only: [:new, :create]
+   authenticated :user do
+     root to: 'users#show', as: :authenticated_root
+   end 
+   
+   get 'welcome/index'
+ 
+   get 'welcome/about'
+   
+   root 'welcome#index'
+>>>>>>> user-story-2_sign-in
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
