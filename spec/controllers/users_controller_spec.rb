@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :controller do
    
  
 describe "user sign in" do
-     
+     let (:factory_user) { create(:user) }
      it "renders the #show view" do
        sign_in(:factory_user)
        get :show, {id: factory_user.id}
