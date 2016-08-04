@@ -4,7 +4,8 @@
        <br />
        
        <div class="media-body">
-         <h2 class="media-heading"><%= current_user.username %></h2>
+         <h2 class="media-heading"><%= current_user.username.capitalize! %>'s To-Do List</h2><br />
+         <h3 class="media-heading">Incase you forgot...this is your email: <%= current_user.email %><br /> Check it.</h3>
        </div>
      </div>
    </div>
