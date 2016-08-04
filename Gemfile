@@ -26,6 +26,7 @@ source 'https://rubygems.org'
 
  group :development, :test do
    gem 'byebug'
+   gem 'capybara'
    gem 'spring'
    gem 'rspec-rails'
    gem 'shoulda'
