@@ -6,8 +6,6 @@ FactoryGirl.define do
     password_confirmation "password"
     unconfirmed_email false
     confirmed_at Time.now
-    after(:create) { |user| user.confirm_token = nil }
-    after(:create) { |user| user.confirm_digest = nil }
-    after(:create) { |user| EncryptPassword.call(user: user) }
+
   end
 end
