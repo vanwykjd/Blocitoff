@@ -6,6 +6,6 @@ FactoryGirl.define do
     password_confirmation "password"
     unconfirmed_email false
     confirmed_at Time.now
-
+    
   end
 end
