@@ -14,7 +14,7 @@ RSpec.describe Item, type: :model do
   
   describe "attributes" do
      it "has a rank, task, and user attributes" do
-       expect(todo_item).to have_attributes(rank: item.rank, task: item.task, user: item.user )
+       expect(todo_item).to have_attributes(rank: todo_item.rank, task: todo_item.task, user: todo_item.user )
    	 end
   end
   

@@ -4,8 +4,7 @@ class ItemsController < ApplicationController
     def create
     	@user = User.find(params[:user_id])
     	@item = @user.items.new(item_params)
-    	@item.user = current_user
-    	@new_item = Item.new
+    
  
     	if @item.save
     		flash[:notice] = "Item added successfully."
@@ -13,8 +12,7 @@ class ItemsController < ApplicationController
     	else
     		flash[:alert] = "Item failed to be added."
     	end
-    	
-	end
+    end
 
     
 private
