@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
   <title>Blocitoff</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,26 +8,51 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+    
   <div class="container">
-    <ul class="nav nav-tabs">
-      <li><%= link_to "Blocitoff", welcome_index_path %></li>
-      <li><%= link_to "About", welcome_about_path %></li>
+    <ul class="nav nav-tabs nav-justified">
       
-      <div class="pull-right user-info">
-       <% if user_signed_in? %>
-         Signed in as: <strong><%= current_user.username %></strong> |
-         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% else %>
-         <%= link_to "Sign In", new_user_session_path %> |
-         <%= link_to "Sign Up", new_user_registration_path %>
-      <% end %>
-      </div>
-      
-      
+    <% if user_signed_in? %>
+        <li>
+            <div class="navbar-header">
+                <div class="hovereffect">
+                    <img class="img-responsive"><%= image_tag current_user.avatar_url %><div class="overlay"><h2>Edit Profile</h2><a class="info" href="/users/edit"></a></div>
+                </div>
+            </div>
+        </li>    
+        
+        <li><%= link_to "Blocitoff", welcome_index_path %></li>
+        
+        <li><%= link_to "About", welcome_about_path %></li>
+        
+        <li>
+            <div class="pull-right user-info">
+                Signed in as: <strong><%= current_user.username %></strong> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            </div>
+        </li>
+           
+    <% else %>
+        
+        <li>
+            <div class="pull-left user-info">
+                <%= link_to "Sign In", new_user_session_path %>
+            </div>
+        </li>
+       
+        <li><%= link_to "Blocitoff", welcome_index_path %></li>
+        
+        <li><%= link_to "About", welcome_about_path %></li>
+        
+        <li>
+            <div class="pull-right user-info">
+                <%= link_to "Sign Up", new_user_registration_path %>
+            </div>
+        </li>
+    <% end %>
+    
     </ul>
-    
-    
     
     <div class="flash">
        <% if flash[:notice] %>
@@ -48,7 +74,9 @@
      </div>
    
     <%= yield %>
+    
   </div>
-
+  
 </body>
+
 </html>
