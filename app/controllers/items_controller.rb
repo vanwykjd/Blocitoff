@@ -46,4 +46,11 @@ private
   def item_params
      params.require(:item).permit(:rank, :task, :completed)
   end
+  
+  def distance_of_time_in_words
+      from_time = @item.created_at
+      to_time = 7.days
+      from_time + to_time
+  end
+      
 end
