@@ -5,7 +5,9 @@ class Item < ActiveRecord::Base
     validates :rank, presence: true
     validates :task, presence: true, length: { minimum: 1 }
     validates :completed, inclusion: [true, false]
-    validates :user, presence: true 
+    validates :user, presence: true
+    
+    default_scope { order('updated_at DESC') }
     
        
 end
