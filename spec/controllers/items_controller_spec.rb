@@ -16,16 +16,16 @@ RSpec.describe ItemsController, type: :controller do
         render_views
         
         it "creates an Item and redirects to the User's page" do
-            post :create, format: :js, user: factory_user, user_id: factory_user.id, item: {task: "Todo Item", rank: 2, completed: false }
+            post :create, format: :js, user: factory_user, user_id: factory_user.id, item: { task: "Todo Item" } ## Add => "rank: 2, completed: false" later 
             expect(response).to have_http_status(200)
         end
         
         it "increases the number of items by 1" do
-            expect{ post :create, format: :js, user: factory_user, user_id: factory_user.id, item: {task: "Todo Item", rank: 2, completed: false }  }.to change(Item,:count).by(1)
+            expect{ post :create, format: :js, user: factory_user, user_id: factory_user.id, item: { task: "Todo Item" }  }.to change(Item,:count).by(1)  ## Add => "rank: 2, completed: false" later
         end
 
         it "assigns the new item to @item" do
-            post :create, format: :js, user: factory_user, user_id: factory_user.id, item: {task: "Todo Item", rank: 2, completed: false }
+            post :create, format: :js, user: factory_user, user_id: factory_user.id, item: { task: "Todo Item" } ## Add => "rank: 2, completed: false" later
             expect(assigns(:item)).to eq Item.last
         end
     end

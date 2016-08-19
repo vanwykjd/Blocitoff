@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
 private
  
   def item_params
-     params.require(:item).permit(:rank, :task, :completed)
+     params.require(:item).permit( :task )  ## Add => :rank, :completed later
   end
   
   def distance_of_time_in_words
