@@ -17,18 +17,30 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  
- .user-info {
-   margin-top: 9px;
+ 
+.navrow { 
+  padding: 10px;
+  bottom: -20px;
+}
+
+.user-info {
+   padding: 10px 0 0 0;
  }
  
- .nav {
-   margin-top: 10px;
+.nav {
+   padding: 20px;
  }
  
- .hovereffect {
+.vcenter {
+  position: relative;
+  top: 50%;
+  transform: translateY(50%); 
+ }
+ 
+.hovereffect {
   width: 100%;
   height: 100%;
-  float: left;
+  float: middle;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -47,12 +59,26 @@
 }
 
 .hovereffect:hover .overlay {
-  background-color: rgba(48, 152, 157, 0.4);
+  background-color: rgba(170,170,170,0.4);
+}
+
+.hovereffect h2, .hovereffect img {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .hovereffect img {
   display: block;
   position: relative;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.hovereffect:hover img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }
 
 .hovereffect h2 {
@@ -60,35 +86,33 @@
   color: #fff;
   text-align: center;
   position: relative;
-  font-size: 10px;
+  top: 60%;
+  font-size: 9px;
+  padding: 2px;
   background: rgba(0, 0, 0, 0.6);
-  -webkit-transform: translateY(45px);
-  -ms-transform: translateY(45px);
-  transform: translateY(45px);
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-.hovereffect:hover h2 {
-  -webkit-transform: translateY(5px);
-  -ms-transform: translateY(5px);
-  transform: translateY(5px);
 }
 
 .hovereffect a.info {
   display: inline-block;
   text-decoration: none;
+  
   text-transform: uppercase;
   color: #fff;
   background-color: transparent;
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-weight: normal;
+  height: 85%;
+  width: 85%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 50%;
 }
 
 .hovereffect:hover a.info {
@@ -97,8 +121,5 @@
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-}
-
-.hovereffect a.info:hover {
-  box-shadow: 0 0 5px #fff;
+  background-color: rgba(0,0,0,0.4);
 }

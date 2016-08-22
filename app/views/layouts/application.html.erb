@@ -8,47 +8,56 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-      <div class="row">
-          <nav class="navbar navbar-default">
-              <div class="container-fluid">
-                <div class="col-md-3">
-                      <div class="navbar-header">
-                          <% if user_signed_in? %>
-                          <div class="hovereffect">
-                              <a class="navbar-brand" href="/users/edit">
-                            <%= content_tag :a, class: "navbar-brand" do %>
-                                 <%= image_tag (current_user.avatar_url), class: "img-responsive" %>
-                            <%end%>
-                              </a>     
-                                 <div class="overlay"><h2>Edit Profile</h2><a class="info" href="/users/edit"></a></div>
-                              
-                          </div>
-                      </div>
-                  
-          </div>
-          <div class="col-md-6">
-              <ul class="nav nav-tabs nav-justified">
-                  <li><%= link_to "Blocitoff", welcome_index_path %></li>
-                  <li><%= link_to "About", welcome_about_path %></li>
-              </ul>
-          </div>
-          <div class="col-md-3">
-              <div class="pull-right user-info">
-                 Signed in as: <strong><%= current_user.username %></strong> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-             
-                  <% else %>
-                  <div class="btn-group" role="group" aria-label="...">
-                     <button type="button" class="btn btn-default"><%= link_to "Sign In", new_user_session_path %></button>
-                     <button type="button" class="btn btn-default"><%= link_to "Sign Up", new_user_registration_path %></button>
-                  </div>
-                  <% end %>
-              </div>
-          </div>
-          </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="row navrow">
+                        <% if user_signed_in? %>
+                        <div class="col-md-3">
+                              <div class="navbar-header">
+                                  <div class="hovereffect">
+                                      <%= image_tag (current_user.avatar_url), class: "img-responsive" %>
+                                      <div class="overlay">
+                                          <h2>Edit Profile</h2>
+                                          <a class="info" href="/users/edit"></a>
+                                      </div>
+                                  </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="nav nav-tabs nav-justified">
+                                <li><%= link_to "To-do List", welcome_index_path %></li>
+                                <li><%= link_to "About", welcome_about_path %></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 nav">
+                            <div class="pull-right user-info" >
+                                    Signed in as: <strong><%= current_user.username %></strong> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                            </div>
+                        </div>
+                        <% else %>
+                        <div class="col-md-6 col-md-offset-3">
+                            <ul class="nav nav-tabs nav-justified">
+                                <li><%= link_to "Blocitoff", welcome_index_path %></li>
+                                <li><%= link_to "About", welcome_about_path %></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 nav">
+                            <div class="pull-right ">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-default"><%= link_to "Sign In", new_user_session_path %></button>
+                                    <button type="button" class="btn btn-default"><%= link_to "Sign Up", new_user_registration_path %></button>
+                                </div>
+                            </div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
           </nav>
       </div>
-      
+      </div>
     
     <div class="flash">
        <% if flash[:notice] %>
