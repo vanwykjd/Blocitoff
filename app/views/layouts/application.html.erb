@@ -14,6 +14,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="row navrow">
+                        
                         <% if user_signed_in? %>
                         <div class="col-md-3">
                               <div class="navbar-header">
@@ -37,6 +38,7 @@
                                     Signed in as: <strong><%= current_user.username %></strong> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
                             </div>
                         </div>
+                        
                         <% else %>
                         <div class="col-md-6 col-md-offset-3">
                             <ul class="nav nav-tabs nav-justified">
@@ -53,11 +55,12 @@
                             </div>
                         </div>
                         <% end %>
+                    
                     </div>
                 </div>
-          </nav>
-      </div>
-      </div>
+            </nav>
+        </div>
+    </div>
     
     <div class="flash">
        <% if flash[:notice] %>
@@ -76,14 +79,10 @@
            <%= flash[:alert] %>
          </div>
        <% end %>
-     </div>
+    </div>
    
     <%= yield %>
     
-    
-    
-    
-  </div>
-
+</div>
 </body>
 </html>
