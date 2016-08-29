@@ -9,5 +9,10 @@ class Item < ActiveRecord::Base
     
     default_scope { order('updated_at DESC') }
     
-       
+    private 
+    
+    def self.default_scope
+        Item.where("updated_at >= ?", Time.now - 7.days)
+    end
+
 end
