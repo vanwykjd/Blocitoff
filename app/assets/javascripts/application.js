@@ -25,5 +25,4 @@ var blocmetrics = {};
         request.onreadystatechange = function() {
         };
         request.send(JSON.stringify(event));
-    }
-};
+    };
