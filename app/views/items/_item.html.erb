@@ -1,4 +1,6 @@
 
 <%= content_tag :li, class: 'list-group-item', id: "item-#{item.id}" do %>
+    
     <%= item.task %> | <%= link_to "Completed",[ item.user, item ], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %><span class="badge"><%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %></span>
+    
 <% end %>

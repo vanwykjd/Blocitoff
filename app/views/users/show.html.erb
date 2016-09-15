@@ -1,3 +1,9 @@
+<body onload="myFunction()">
+    <script>
+        function myFunction() {
+            blocmetrics.report('user#load');
+        }
+    </script>
 <div class="row">
     <div class="col-md-8.col-md-offset-2">
         <div class="media">
@@ -19,9 +25,4 @@
         </div>
     </div>
 </div>
-
-<script>
-    window.onload = function() {
-      blocmetrics.report('User#Show');
-    };
-</script>
+</body>
