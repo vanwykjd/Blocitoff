@@ -16,8 +16,8 @@
 //= require bootstrap
 //= require_tree .
 var blocmetrics = {};
-    blocmetrics.report = function(new_item) {
-        var event = { event: { name: new_item } };
+    blocmetrics.report = function(task_added) {
+        var event = { event: { name: task_added } };
         
         var request = new XMLHttpRequest();
         request.open("POST", "https://infinite-scrubland-37577.herokuapp.com/api/events", true);
