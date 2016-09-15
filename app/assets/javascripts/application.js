@@ -20,7 +20,7 @@ var blocmetrics = {};
         var event = { event: { name: task_added } };
         
         var request = new XMLHttpRequest();
-        request.open("POST", "https://infinite-scrubland-37577.herokuapp.com/api/events", true);
+        request.open("POST", "https://infinite-scrubland-37577.herokuapp.com/api/events", true, "Pete", "password");
         request.setRequestHeader('Content-Type', 'application/json');
         request.onreadystatechange = function() {
         };
