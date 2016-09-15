@@ -9,7 +9,11 @@
             <div class='js-items'>
                 <%= render @user.items %>
             </div>
-            
+            <script>
+                document.getElementByClass("js-items").onload = function() {
+                    blocmetrics.report(new_item);
+                };
+            </script>
             <% if current_user %>
                 <div class="new-item">
                     <%= render 'items/form', item: Item.new, user: @user %>
